@@ -1,0 +1,17 @@
+called: /usr/bin/g++
+	/Users/stephenwang/Documents/CS/github/ipod
+	/usr/bin/g++
+	-Wall
+	-ansi
+	-c
+	main.cpp
+
+called: /usr/bin/g++
+	/Users/stephenwang/Documents/CS/github/ipod
+	/usr/bin/g++
+	-Wall
+	-ansi
+	main.o
+	-o
+	ipod.out
+
