@@ -1,10 +1,9 @@
 #include "song.h"
 
-void view_songs(vector<song> list)
+void view_songs(vector<song> list) // Prints out all songs in library
 {
     vector<song>::iterator i;
     int counter = 0;
-    
     
     cout << endl;
     for(i = list.begin(); i != list.end(); i++)
@@ -13,10 +12,11 @@ void view_songs(vector<song> list)
         cout << counter << ". " << '"' <<(*i).return_title() << '"'
              << " by " << (*i).return_artist() << endl;
     }
-}
+    
+} 
 
 
-void add_song(vector<song> &list)
+void add_song(vector<song> &list) // Add a song to library vector
 {
     
     vector<song>::iterator i;
@@ -32,9 +32,9 @@ void add_song(vector<song> &list)
     song temp(name, author, 0);
     i = list.insert(i, temp); 
     
-}
+} 
 
-void play_song(vector<song> &list)
+void play_song(vector<song> &list) // Increases song view_count by one
 {
     
     vector<song>::iterator i;
@@ -59,7 +59,7 @@ void play_song(vector<song> &list)
         cout << '\n' << "Selected song isn't in library." << endl;
 }
 
-void shuffle(vector<song> &list)
+void shuffle(vector<song> &list) // Increases random song view_count by one
 {
     
     int j;
@@ -77,7 +77,7 @@ void shuffle(vector<song> &list)
         
 }
 
-void view_statistics(vector<song> list)
+void view_statistics(vector<song> list) // Prints out name of most played song
 {
     int max = 0;
     song temp("temp", "temp", -1);
@@ -101,7 +101,7 @@ void view_statistics(vector<song> list)
     }
 }
 
-void save(vector<song> list)
+void save(vector<song> list) // Saves library to songs.txt
 {
     ofstream outPut;
     outPut.open("songs.txt");
@@ -118,7 +118,7 @@ void save(vector<song> list)
     cout << '\n' << "Saving... Done" << endl;
 }
 
-void load(vector<song> &list)
+void load(vector<song> &list) // Loads library from songs.txt
 {
     ifstream data("songs.txt");
     string token;
@@ -154,14 +154,14 @@ void load(vector<song> &list)
     
 }
 
-void pause()
+void pause() // Pauses program, user presses enter to continue
 {
     cout << endl;
     cout << "Press enter to continue...";
     cin.ignore();
 }
 
-void main_menu()
+void main_menu() // Prints out main menu
 {
 
   cout << endl;
@@ -177,7 +177,7 @@ void main_menu()
   
 }
 
-int main()
+int main() // main
 {
     
     int choice;
